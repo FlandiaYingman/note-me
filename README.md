@@ -62,3 +62,7 @@ It borrows the style of GitHub's admonition.
 
 > [!CAUTION]
 > Negative potential consequences of an action.
+
+## Credits
+
+The admonition icons are from [Octicons](https://github.com/primer/octicons).
