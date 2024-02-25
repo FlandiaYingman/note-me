@@ -1,5 +1,7 @@
-// As the package hasn't been published, import it from local.
-// Replace `local` to `preview` once the package is published.
+// Import from @preview namespace is suggested
+// #import "@preview/note-me:0.1.1": *
+
+// Import from @local namespace is only for debugging purpose
 #import "@local/note-me:0.1.1": *
 
 #note[
