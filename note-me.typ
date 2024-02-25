@@ -19,8 +19,8 @@
 
 #let admonition(
   icon: "icons/info.svg",
-  color: color.black,
   title: "Admonition",
+  color: color.black,
   background-color: none,
   children
 ) = block(
@@ -42,31 +42,31 @@
 
 #let note(children) = admonition(
   icon: "icons/info.svg",
-  color: rgb(9, 105, 218),
   title: "Note",
+  color: rgb(9, 105, 218),
   children
 )
 #let tip(children) = admonition(
   icon: "icons/light-bulb.svg",
-  color: rgb(31, 136, 61),
   title: "Tip",
+  color: rgb(31, 136, 61),
   children
 )
 #let important(children) = admonition(
   icon: "icons/report.svg",
-  color: rgb(130, 80, 223),
   title: "Important",
+  color: rgb(130, 80, 223),
   children
 )
 #let warning(children) = admonition(
   icon: "icons/alert.svg",
-  color: rgb(154, 103, 0),
   title: "Warning",
+  color: rgb(154, 103, 0),
   children
 )
 #let caution(children) = admonition(
   icon: "icons/stop.svg",
-  color: rgb(209, 36, 47),
   title: "Caution",
+  color: rgb(209, 36, 47),
   children
 )
