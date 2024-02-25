@@ -1,6 +1,6 @@
 // As the package hasn't been published, import it from local.
 // Replace `local` to `preview` once the package is published.
-#import "@local/github-admonition:0.1.0": *
+#import "@local/note-me:0.1.1": *
 
 #note[
 Highlights information that users should take into account, even when skimming.
@@ -26,6 +26,7 @@ Negative potential consequences of an action.
   icon: "icons/stop.svg",
   color: color.fuchsia,
   title: "Custom Title",
+  background-color: color.silver,
 )[
   The icon, color and title are customizable.
 ]

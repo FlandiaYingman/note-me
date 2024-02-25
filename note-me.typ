@@ -21,11 +21,13 @@
   icon: "icons/info.svg",
   color: color.black,
   title: "Admonition",
+  background-color: none,
   children
 ) = block(
   width: 100%,
   inset: (left: 1.25em, right: .5em, top: .5em, bottom: .5em),
   stroke: (left: 1.75pt + color),
+  fill: background-color,
   [
     #stack(
       dir: ltr,
