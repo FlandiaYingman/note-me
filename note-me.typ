@@ -1,3 +1,5 @@
+#import "stick-together.typ": stick-together
+
 // From: https://github.com/typst/typst/issues/1939#issuecomment-1680154871
 #let colorize(svg, color) = {
   let blk = black.to-hex();
@@ -21,6 +23,7 @@
   icon: "icons/info.svg",
   title: "Admonition",
   color: color.black,
+  foreground-color: auto,
   background-color: none,
   children
 ) = block(
@@ -29,14 +32,22 @@
   stroke: (left: 1.75pt + color),
   fill: background-color,
   [
-    #stack(
-      dir: ltr,
-      spacing: 1em,
-      align(horizon, color-svg(icon, color, width: 1em, height: 1em)),
-      align(horizon, text(weight: "bold", fill: color, title))
+    #stick-together(
+      stack(
+        dir: ltr,
+        spacing: 1em,
+        align(horizon, color-svg(icon, color, width: 1em, height: 1em)),
+        align(horizon, text(weight: "bold", fill: color, title))
+      ),
+      {
+        if (foreground-color == auto) {
+          text(children) 
+        } else {
+          text(fill: foreground-color, children) 
+        }
+      },
+      threshold: 3.175em,
     )
-    
-    #children  
   ],
 )
 
