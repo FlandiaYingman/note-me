@@ -2,7 +2,7 @@
 // #import "@preview/note-me:0.1.1": *
 
 // Import from @local namespace is only for debugging purpose
-#import "@local/note-me:0.2.0": *
+#import "@local/note-me:0.2.1": *
 
 = Basic Examples
 
@@ -34,4 +34,10 @@
   background-color: color.black,
 )[
   The icon, (theme) color, title, foreground and background color are customizable.
+]
+
+= More Examples
+
+#todo[
+  Fix `note-me` package.
 ]

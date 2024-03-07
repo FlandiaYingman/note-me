@@ -5,9 +5,11 @@
 
 ## Usage
 
-Import this package, and
+Import this package, and do
 
 ```typ
+= Basic Examples
+
 #note[
   Highlights information that users should take into account, even when skimming.
 ]
@@ -31,13 +33,21 @@ Import this package, and
 #admonition(
   icon: "icons/stop.svg",
   color: color.fuchsia,
-  title: "Custom Title",
+  title: "Customize",
+  foreground-color: color.white,
+  background-color: color.black,
 )[
-  The icon, color and title are customizable.
+  The icon, (theme) color, title, foreground and background color are customizable.
+]
+
+= More Examples
+
+#todo[
+  Fix `note-me` package.
 ]
 ```
 
-![github-admonition](https://github.com/FlandiaYingman/typst-github-admonition/assets/9929037/639a62fa-f2f7-4d70-b922-29dc72372f46)
+![github-admonition](example.svg)
 
 Further Reading: 
 

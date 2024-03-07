@@ -1,7 +1,7 @@
 [package]
 name = "note-me"
-version = "0.2.0"
-entrypoint = "note-me.typ"
+version = "0.2.1"
+entrypoint = "lib.typ"
 authors = ["Flandia Yingman"]
 license = "MIT"
 description = "Adds GitHub-style Admonitions (Alerts) to Typst."
