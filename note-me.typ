@@ -10,7 +10,8 @@
   }
 }
 
-#let color-svg(
+// Returns a new SVG image loaded from the specified path, filled with the specified color.
+#let color-svg-path(
   path,
   color, 
   ..args,
@@ -19,8 +20,20 @@
   return image.decode(data, ..args)
 }
 
+// Returns a new SVG image loaded from the specified string (SVG content), filled with the specified color.
+#let color-svg-string(
+  svg,
+  color, 
+  ..args,
+) = {
+  let data = colorize(svg, color)
+  return image.decode(data, ..args)
+}
+
 #let admonition(
-  icon: "icons/info.svg",
+  icon-path: none,
+  icon-string: none,
+  icon: none,
   title: "Admonition",
   color: color.black,
   foreground-color: auto,
@@ -36,7 +49,23 @@
       stack(
         dir: ltr,
         spacing: 1em,
-        align(horizon, color-svg(icon, color, width: 1em, height: 1em)),
+        align(horizon, {
+          assert(
+            icon-path != none or
+            icon-string != none or
+            icon != none,
+            message: "Either `icon-path`, `icon-string` or `icon` must be specified in the argument."
+          )
+          if (icon-path != none) {
+             color-svg-path(icon-path, color, width: 1em, height: 1em)
+          } 
+          if (icon-string != none) {
+            color-svg-string(icon-string, color, width: 1em, height: 1em)
+          }
+          if (icon != none) {
+            icon
+          }
+        }),
         align(horizon, text(weight: "bold", fill: color, title))
       ),
       {
@@ -52,31 +81,31 @@
 )
 
 #let note(children) = admonition(
-  icon: "icons/info.svg",
+  icon-path: "icons/info.svg",
   title: "Note",
   color: rgb(9, 105, 218),
   children
 )
 #let tip(children) = admonition(
-  icon: "icons/light-bulb.svg",
+  icon-path: "icons/light-bulb.svg",
   title: "Tip",
   color: rgb(31, 136, 61),
   children
 )
 #let important(children) = admonition(
-  icon: "icons/report.svg",
+  icon-path: "icons/report.svg",
   title: "Important",
   color: rgb(130, 80, 223),
   children
 )
 #let warning(children) = admonition(
-  icon: "icons/alert.svg",
+  icon-path: "icons/alert.svg",
   title: "Warning",
   color: rgb(154, 103, 0),
   children
 )
 #let caution(children) = admonition(
-  icon: "icons/stop.svg",
+  icon-path: "icons/stop.svg",
   title: "Caution",
   color: rgb(209, 36, 47),
   children
