@@ -80,33 +80,33 @@
   ],
 )
 
-#let note(children) = admonition(
+#let note(title: "Note", children) = admonition(
   icon-path: "icons/info.svg",
-  title: "Note",
+  title: title,
   color: rgb(9, 105, 218),
   children
 )
-#let tip(children) = admonition(
+#let tip(title: "Tip", children) = admonition(
   icon-path: "icons/light-bulb.svg",
-  title: "Tip",
+  title: title,
   color: rgb(31, 136, 61),
   children
 )
-#let important(children) = admonition(
+#let important(title: "Important", children) = admonition(
   icon-path: "icons/report.svg",
-  title: "Important",
+  title: title,
   color: rgb(130, 80, 223),
   children
 )
-#let warning(children) = admonition(
+#let warning(title: "Warning", children) = admonition(
   icon-path: "icons/alert.svg",
-  title: "Warning",
+  title: title,
   color: rgb(154, 103, 0),
   children
 )
-#let caution(children) = admonition(
+#let caution(title: "Caution", children) = admonition(
   icon-path: "icons/stop.svg",
-  title: "Caution",
+  title: title,
   color: rgb(209, 36, 47),
   children
 )
