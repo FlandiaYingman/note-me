@@ -46,8 +46,8 @@
   fill: background-color,
   [
     #stick-together(
-      stack(
-        dir: ltr,
+      context stack(
+        dir: text.dir,
         spacing: 1em,
         align(horizon, {
           assert(
