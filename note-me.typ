@@ -47,7 +47,7 @@
   [
     #stick-together(
       context stack(
-        dir: text.dir,
+        dir: if (text.dir == auto) { ltr } else { text.dir },
         spacing: 1em,
         align(horizon, {
           assert(
