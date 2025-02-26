@@ -17,7 +17,7 @@
   ..args,
 ) = {
   let data = colorize(read(path), color)
-  return image.decode(data, ..args)
+  return image(bytes(data, ..args))
 }
 
 // Returns a new SVG image loaded from the specified string (SVG content), filled with the specified color.
@@ -27,7 +27,7 @@
   ..args,
 ) = {
   let data = colorize(svg, color)
-  return image.decode(data, ..args)
+  return image(bytes(data, ..args))
 }
 
 #let admonition(
