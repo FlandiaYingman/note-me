@@ -1,11 +1,11 @@
-# GitHub Admonition for Typst
+# GitHub-Style Admonitions (Alerts) for Typst
 
 > [!NOTE]
-> Add GitHub style admonitions (also known as alerts) to Typst.
+> Add GitHub-style admonitions (aka. alerts) to Typst.
 
 ## Usage
 
-Import this package, and do
+Import this package, and write
 
 ```typ
 // Import from @preview namespace is suggested
