@@ -1,8 +1,8 @@
 // Import from @preview namespace is suggested
-// #import "@preview/note-me:0.4.0": *
+// #import "@preview/note-me:0.5.0": *
 
 // Import from @local namespace is only for debugging purpose
-// #import "@local/note-me:0.4.0": *
+// #import "@local/note-me:0.5.0": *
 
 // Import relatively is for development purpose
 #import "lib.typ": *
