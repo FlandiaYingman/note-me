@@ -17,7 +17,7 @@
   ..args,
 ) = {
   let data = colorize(read(path), color)
-  return image.decode(data, ..args)
+  return image(bytes(data), ..args)
 }
 
 // Returns a new SVG image loaded from the specified string (SVG content), filled with the specified color.
@@ -27,7 +27,7 @@
   ..args,
 ) = {
   let data = colorize(svg, color)
-  return image.decode(data, ..args)
+  return image(bytes(data), ..args)
 }
 
 #let admonition(
@@ -57,7 +57,7 @@
             message: "Either `icon-path`, `icon-string` or `icon` must be specified in the argument."
           )
           if (icon-path != none) {
-             color-svg-path(icon-path, color, width: 1em, height: 1em)
+            color-svg-path(icon-path, color, width: 1em, height: 1em)
           } 
           if (icon-string != none) {
             color-svg-string(icon-string, color, width: 1em, height: 1em)
