@@ -41,12 +41,15 @@ Import this package, and write
 
 #admonition(
   icon-path: "icons/stop.svg",
+  // `auto` (dfault), `str` with an alt text that will be added for the icon,
+  // or `none` to mark the icon as purely decorative not needing an alt text.
+  icon-alt: "Stop sign",
   color: color.fuchsia,
   title: "Customize",
   foreground-color: color.white,
   background-color: color.black,
 )[
-  The icon, (theme) color, title, foreground and background color are customizable.
+  The icon, icon alt text, (theme) color, title, foreground and background color are customizable.
 ]
 
 #admonition(
