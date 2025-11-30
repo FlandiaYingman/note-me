@@ -1,4 +1,5 @@
 #import "stick-together.typ": stick-together
+#import "utils.typ"
 
 // From: https://github.com/typst/typst/issues/1939#issuecomment-1680154871
 #let colorize(svg, color) = {
@@ -13,27 +14,30 @@
 // Returns a new SVG image loaded from the specified path, filled with the specified color.
 #let color-svg-path(
   path,
-  color, 
+  color,
+  alt: auto,
   ..args,
 ) = {
   let data = colorize(read(path), color)
-  return image(bytes(data), ..args)
+  return utils.accessible-icon(data, alt, ..args)
 }
 
 // Returns a new SVG image loaded from the specified string (SVG content), filled with the specified color.
 #let color-svg-string(
   svg,
-  color, 
+  color,
+  alt: auto,
   ..args,
 ) = {
   let data = colorize(svg, color)
-  return image(bytes(data), ..args)
+  return utils.accessible-icon(data, alt, ..args)
 }
 
 #let admonition(
   icon-path: none,
   icon-string: none,
   icon: none,
+  icon-alt: auto,
   title: "Admonition",
   color: color.black,
   foreground-color: auto,
@@ -57,10 +61,10 @@
             message: "Either `icon-path`, `icon-string` or `icon` must be specified in the argument."
           )
           if (icon-path != none) {
-            color-svg-path(icon-path, color, width: 1em, height: 1em)
+            color-svg-path(icon-path, color, alt: icon-alt, width: 1em, height: 1em)
           } 
           if (icon-string != none) {
-            color-svg-string(icon-string, color, width: 1em, height: 1em)
+            color-svg-string(icon-string, color, alt: icon-alt, width: 1em, height: 1em)
           }
           if (icon != none) {
             icon
@@ -82,30 +86,35 @@
 
 #let note(title: "Note", children) = admonition(
   icon-path: "icons/info.svg",
+  icon-alt: none,
   title: title,
   color: rgb(9, 105, 218),
   children
 )
 #let tip(title: "Tip", children) = admonition(
   icon-path: "icons/light-bulb.svg",
+  icon-alt: none,
   title: title,
   color: rgb(31, 136, 61),
   children
 )
 #let important(title: "Important", children) = admonition(
   icon-path: "icons/report.svg",
+  icon-alt: none,
   title: title,
   color: rgb(130, 80, 223),
   children
 )
 #let warning(title: "Warning", children) = admonition(
   icon-path: "icons/alert.svg",
+  icon-alt: none,
   title: title,
   color: rgb(154, 103, 0),
   children
 )
 #let caution(title: "Caution", children) = admonition(
   icon-path: "icons/stop.svg",
+  icon-alt: none,
   title: title,
   color: rgb(209, 36, 47),
   children
