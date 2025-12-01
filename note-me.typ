@@ -19,7 +19,7 @@
   ..args,
 ) = {
   let data = colorize(read(path), color)
-  return utils.accessible-icon(data, alt, ..args)
+  return utils.accessible-icon(data, alt: alt, ..args)
 }
 
 // Returns a new SVG image loaded from the specified string (SVG content), filled with the specified color.
@@ -30,7 +30,7 @@
   ..args,
 ) = {
   let data = colorize(svg, color)
-  return utils.accessible-icon(data, alt, ..args)
+  return utils.accessible-icon(data, alt: alt, ..args)
 }
 
 #let admonition(
