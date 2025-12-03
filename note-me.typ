@@ -4,7 +4,7 @@
 // From: https://github.com/typst/typst/issues/1939#issuecomment-1680154871
 #let colorize(svg, color) = {
   let blk = black.to-hex();
-  if svg.contains(blk) { 
+  if svg.contains(blk) {
     svg.replace(blk, color.to-hex())
   } else {
     svg.replace("<svg ", "<svg fill=\""+color.to-hex()+"\" ")
@@ -62,7 +62,7 @@
           )
           if (icon-path != none) {
             color-svg-path(icon-path, color, alt: icon-alt, width: 1em, height: 1em)
-          } 
+          }
           if (icon-string != none) {
             color-svg-string(icon-string, color, alt: icon-alt, width: 1em, height: 1em)
           }
@@ -74,9 +74,9 @@
       ),
       {
         if (foreground-color == auto) {
-          text(children) 
+          text(children)
         } else {
-          text(fill: foreground-color, children) 
+          text(fill: foreground-color, children)
         }
       },
       threshold: 3.175em,

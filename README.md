@@ -9,13 +9,13 @@ Import this package, and write
 
 ```typ
 // Import from @preview namespace is suggested
-// #import "@preview/note-me:0.6.0": *
+#import "@preview/note-me:0.6.0": *
 
 // Import from @local namespace is only for debugging purpose
 // #import "@local/note-me:0.6.0": *
 
 // Import relatively is for development purpose
-#import "lib.typ": *
+// #import "lib.typ": *
 
 = Basic Examples
 
@@ -41,7 +41,7 @@ Import this package, and write
 
 #admonition(
   icon-path: "icons/stop.svg",
-  // `auto` (dfault), `str` with an alt text that will be added for the icon,
+  // `auto` (default), `str` with an alt text that will be added for the icon,
   // or `none` to mark the icon as purely decorative not needing an alt text.
   icon-alt: "Stop sign",
   color: color.fuchsia,
@@ -57,7 +57,7 @@ Import this package, and write
   color: color.fuchsia,
   title: "Customize",
 )[
-  The icon can be specified as a string of SVG. This is useful if the user want to use an SVG icon that is not available in this package.
+  The icon can be specified as a string of SVG. This is useful if the user wants to use an SVG icon that is not available in this package.
 ]
 
 #admonition(
